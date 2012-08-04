@@ -3,13 +3,23 @@
 import random
 import namedtuple from collections
 
-import * from food
-import * from events
+from food import *
+from events import *
+from tools import *
 
-Resources = namedtuple("Resources", "gold human solder food country")
+GameInit  = namedtuple("GameInit", "years Resources")
+Solders = namedtuple("Solders", "worker mercenary")
+Resources = namedtuple("Resources", "gold worker solders food country")
 
 event_in_process = False
 
+#******************
+#returns named tuple
+# .year = 
+def init_game():
+	y = inputNum("Введите количество лет, которое вы хотите править: ")
+	res = Resources(500, 15, 0, 100, 100)
+	return GameInit(y, res)
 
 def run():
 	init_game()
@@ -26,7 +36,7 @@ def run():
 	return
 
 
-if __name__ = "main":
+if __name__ = "__main__":
 	try:
 		run()
 	except Exception, e as err:
