@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import tools
+import sys
 
 def testTools():
 	print("Running test tools.inputNum...")
